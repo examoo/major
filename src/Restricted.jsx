@@ -8,19 +8,13 @@ import logoFull from '../public/logo-full.png';
 import PowerIcon from './Icons/PowerIcon';
 import ShopIcon from './Icons/ShopIcon';
 import MenuIcon from './Icons/MenuIcon';
+import Layout from './components/Layout';
 
 const Restricted = () => {
     const [password, setPassword] = useState('');
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
 
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    const [isCollectionHovered, setIsCollectionHovered] = useState(false);
-
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
 
     // Handle password submission
     const handleSubmit = (e) => {
@@ -34,8 +28,7 @@ const Restricted = () => {
     };
 
     return (
-        <div className="min-h-screen z-0 overflow-hidden relative bg-[#181818] text-[#F0F0F0] flex flex-col items-center justify-center">
-
+<>
             {!isAuthenticated ? (
                 <div className="w-full max-w-md p-8 space-y-8 bg-[#242424] border-[#3F3F3F] rounded-lg shadow-lg">
                     <div className="flex flex-col items-center justify-center">
@@ -66,84 +59,18 @@ const Restricted = () => {
                 </div>
             ) : (
                 <>
+                <Layout>
+                <div className="absolute inset-0 z-[-1] opacity-10 bg-contain bg-no-repeat bg-center " style={{ backgroundImage: `url('major-world.png')` }}></div>
 
-                <div className="absolute inset-0 z-[-1] opacity-10 bg-contain bg-no-repeat bg-center" style={{ backgroundImage: `url('major-world.png')` }}></div>
 
-                <nav className=" shadow sticky top-0 bg-[#242424] opacity-90 w-full border-b border-[#3F3F3F]">
-        <div className="w-full px-4">
-            <div className="flex justify-between">
-                <div className="flex space-x-4 justify-between w-full">
-                    
 
-                    <div className="hidden md:flex items-center justify-start space-x-1 w-1/3">
-                        <a href="#" className="py-5 px-3 text-gray-200 font-medium hover:text-[#e63946] border-b-2 border-[#e63946] ">
-                            <MenuIcon width={24} height={24} fill="none" className="cursor-pointer hover:text-[#e63946]" stroke="currentColor"/>
-                        </a>
-                        <div className="relative inline-block">
-                            <a href="#"  onMouseEnter={() => setIsCollectionHovered(true)}
-        onMouseLeave={() => setIsCollectionHovered(false)} className="py-5 px-3 text-gray-200 hover:text-[#e63946]">Collections</a>
-                        {isCollectionHovered && (
-        <div
-          className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50"
-          onMouseEnter={() => setIsCollectionHovered(true)}
-          onMouseLeave={() => setIsCollectionHovered(false)}
-        >
-          <a href="#" className="block px-4 py-2 bg-[#242424] hover:text-[#e63946]">
-            Collection 1
-          </a>
-          <a href="#" className="block px-4 py-2 bg-[#242424] hover:text-[#e63946]">
-            Collection 2
-          </a>
-          <a href="#" className="block px-4 py-2 bg-[#242424] hover:text-[#e63946]">
-            Collection 3
-          </a>
-        </div>
-      )}
-                        </div>
-                    </div>
-
-                    <div className="w-1/3 flex justify-center">
-                        <a href="#" className="flex items-center py-2 px-2 ">
-                        <img src={logoFull} alt="major" className='w-[75px]' />
-                        </a>
-                    </div>
-
-                    <div className="w-1/3 hidden md:flex items-center justify-end space-x-4">
-                        <PowerIcon onClick={() => setIsAuthenticated(false)} width={24} height={24} fill="none" className="cursor-pointer hover:text-[#e63946]" stroke="currentColor"/>
-                        <ShopIcon width={24} height={24} fill="none" className="cursor-pointer hover:text-[#e63946]" stroke="currentColor"/>
-                        {/* <button onClick={() => setIsAuthenticated(false)} className="px-4 py-1 bg-[#E63946] hover:bg-[#DF3844] rounded-md transition-colors duration-300 cursor-pointer">Logout</button> */}
-                    </div>
-                </div>
-
-                <div className="md:hidden flex items-center">
-                    <button onClick={toggleMobileMenu} className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200">
-                        <svg className="h-6 w-6 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div className={`mobile-menu md:hidden ${isMobileMenuOpen ? "" : "hidden"}`}>
-            {/* <a href="#" className="block py-2 px-4 text-gray-800 dark:text-white bg-blue-50 dark:bg-blue-900 font-medium border-l-4 border-blue-500 dark:border-blue-400">Home</a>
-            <a href="#" className="block py-2 px-4 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Products</a>
-            <a href="#" className="block py-2 px-4 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Services</a>
-            <a href="#" className="block py-2 px-4 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
-            <a href="#" className="block py-2 px-4 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a> */}
-            <div className="py-2 px-4 border-t border-gray-200 dark:border-gray-700">
-            <button onClick={() => setIsAuthenticated(false)} className="block my-2 w-full px-4 py-2 bg-[#E63946] hover:bg-[#DF3844] rounded-md transition-colors duration-300 cursor-pointer">Logout</button>
-            </div>
-        </div>
-    </nav>
-
-                    {/* <div className='w-full'>
+                    <div className='w-full'>
                         <header className="flex justify-center items-center mb-12 p-6">
                             <span>
                                 <img src={logoFull} alt="major" className='w-[150px]' />
                             </span>
                         </header>
-                    </div> */}
+                    </div>
                     <div className="w-full p-6 mt-12 min-h-[85vh]">
                         {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-[90%] mx-auto  ">
                             <div className="bg-[#242424] p-6 mb-6 rounded-lg shadow-lg">
@@ -179,9 +106,10 @@ const Restricted = () => {
                             </div>
                         </div> */}
                     </div>
+                    </Layout>
                 </>
             )}
-        </div>
+            </>
     );
 };
 
