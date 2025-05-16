@@ -139,6 +139,7 @@ useEffect(() => {
                 <div className="space-y-2">
                   {Object.values(allCollection).map((collection) => (
                     <CheckBox
+                    key={collection?.id}
                       label={collection?.name}
                       checked={activeCollections[collection?.slug] ?? false}
                       onChange={() => handleFilterChange(collection?.slug)}

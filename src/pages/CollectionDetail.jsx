@@ -5,6 +5,7 @@ import { getCollectionBySlug } from '../data/collections';
  import  Button from '@/components/ui/button';
 import {  ShoppingCart } from 'lucide-react';
 import TurnableImage from '../components/ui/turnable-image';
+import FeatureList from '../components/ui/feature-list';
 
 const CollectionDetail = () => {
   const { slug } = useParams();
@@ -44,6 +45,7 @@ const CollectionDetail = () => {
             <p className="mt-4 text-gray-800">
               A collection that raises awareness that degree wins championship.
             </p>
+            <FeatureList features={collection?.features ?? []} />
           </div>
         </div>
 
@@ -57,7 +59,7 @@ const CollectionDetail = () => {
         </div>
       </div>
     </Layout>
-  );
+    );
 };
 
 export default CollectionDetail;

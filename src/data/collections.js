@@ -5,8 +5,6 @@ export const collections = [
     name: "Championship Icy Silver",
     description:
       "Our premium silver collection designed for champions. These high-quality items represent excellence and achievement.",
-    image: "/placeholder.svg",
-    color: "bg-silver",
     images: [
       "../images-black/civic-1.jpg",
       "../images-black/civic-2.jpg",
@@ -17,13 +15,23 @@ export const collections = [
       "../images-black/civic-7.jpg",
       "../images-black/civic-8.jpg",
     ],
+    features: [
+          "Engine: 1.5L Turbocharged",
+          "Transmission: CVT Automatic",
+          "Color: Silver",
+          "Fuel Efficiency: 32 MPG city / 42 MPG highway",
+          "Seats: 5",
+          "Infotainment: 7-inch touchscreen, Apple CarPlay, Android Auto",
+          "Safety: Honda Sensing Suite",
+          "Wheels: 17-inch Alloy",
+          "Keyless Entry & Push Button Start",
+          "Climate Control: Dual-zone automatic",
+        ],
     products: [
       {
-        id: 101,
-        slug: "silver-trophy",
+      id: 101,
         name: "Silver Trophy",
         price: 199.99,
-        image: "/placeholder.svg",
         description: "A premium silver trophy for the champions.",
         images: [
           "images-black/civic-1.jpg",
@@ -44,8 +52,18 @@ export const collections = [
     name: "Championship Icy Blue",
     description:
       "Our distinctive blue collection with icy accents. Perfect for modern champions who want to stand out.",
-    image: "/placeholder.svg",
-    color: "bg-iceBlue",
+    features: [
+          "Engine: 1.5L Turbocharged",
+          "Transmission: CVT Automatic",
+          "Color: Blue",
+          "Fuel Efficiency: 32 MPG city / 42 MPG highway",
+          "Seats: 5",
+          "Infotainment: 7-inch touchscreen, Apple CarPlay, Android Auto",
+          "Safety: Honda Sensing Suite",
+          "Wheels: 17-inch Alloy",
+          "Keyless Entry & Push Button Start",
+          "Climate Control: Dual-zone automatic",
+        ],
     images: [
       "../images-silver/civic-1.jpg",
       "../images-silver/civic-2.jpg",
@@ -64,7 +82,6 @@ export const collections = [
         price: 249.99,
         image: "/placeholder.svg",
         description: "Elegant crystal trophy with blue accents.",
-
         images: [
           "images-silver/civic-1.jpg",
           "images-silver/civic-2.jpg",
@@ -84,8 +101,18 @@ export const collections = [
     name: "Championship Royal Gold",
     description:
       "Our most prestigious collection featuring royal gold elements. The ultimate symbol of championship excellence.",
-    image: "/placeholder.svg",
-    color: "bg-gold",
+    features: [
+          "Engine: 1.5L Turbocharged",
+          "Transmission: CVT Automatic",
+          "Color: Black",
+          "Fuel Efficiency: 32 MPG city / 42 MPG highway",
+          "Seats: 5",
+          "Infotainment: 7-inch touchscreen, Apple CarPlay, Android Auto",
+          "Safety: Honda Sensing Suite",
+          "Wheels: 17-inch Alloy",
+          "Keyless Entry & Push Button Start",
+          "Climate Control: Dual-zone automatic",
+        ],
     images: [
       "../images-red/civic-1.jpg",
       "../images-red/civic-2.jpg",
