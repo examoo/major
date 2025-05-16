@@ -5,7 +5,7 @@ import PowerIcon from '../Icons/PowerIcon';
 import ShopIcon from '../Icons/ShopIcon';
 import { Link } from "react-router-dom";
 import CollectionList from "./ui/collection-list";
-const Topbar = () => {
+const Topbar = ({onLogout}) => {
   
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -44,7 +44,7 @@ const Topbar = () => {
 
             <div className="w-1/3 hidden md:flex items-center justify-end space-x-4">
               <PowerIcon
-                onClick={() => setIsAuthenticated(false)}
+                onClick={() => onLogout(false)}
                 width={24}
                 height={24}
                 fill="none"

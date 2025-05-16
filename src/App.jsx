@@ -1,7 +1,6 @@
 import './App.css'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-import Restricted from './Restricted'
 import CollectionDetail from './pages/CollectionDetail';
 import Shop from './pages/Shop';
 import Home from './pages/Home';
