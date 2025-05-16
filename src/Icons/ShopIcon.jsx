@@ -2,7 +2,7 @@
 const ShopIcon = ({ width, height, fill, stroke, className, onClick }) => {
     return (
         <svg  
-            onClick={() => { onClick() }}
+            onClick={onClick}
             xmlns="http://www.w3.org/2000/svg"  
             width={width}  
             height={height}  

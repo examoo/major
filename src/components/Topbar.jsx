@@ -3,12 +3,13 @@ import MenuIcon from "../Icons/MenuIcon";
 import logoFull from '../../public/logo-full.png';
 import PowerIcon from '../Icons/PowerIcon';
 import ShopIcon from '../Icons/ShopIcon';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CollectionList from "./ui/collection-list";
 const Topbar = ({onLogout}) => {
   
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -51,17 +52,14 @@ const Topbar = ({onLogout}) => {
                 className="cursor-pointer hover:text-[#e63946]"
                 stroke="currentColor"
               />
-              <Link to="/shop">
                 <ShopIcon
                   width={24}
                   height={24}
                   fill="none"
                   className="cursor-pointer hover:text-[#e63946]"
                   stroke="currentColor"
-                  onClick={()=>Link}
+                  onClick={() => navigate('/shop')}
                 />
-              </Link>
-              {/* <button onClick={() => setIsAuthenticated(false)} className="px-4 py-1 bg-[#E63946] hover:bg-[#DF3844] rounded-md transition-colors duration-300 cursor-pointer">Logout</button> */}
             </div>
           </div>
 
